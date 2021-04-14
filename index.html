@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <title>Validation form</title>
 
@@ -13,13 +13,12 @@
     <meta property="og:description" content="Email verification form exercise" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/og-img.png" />
-    <meta property="og:url" content="https://quinhsieh.github.io/validation-form"/>
-    <meta property="og:image:alt" content="Email verification form exercise"/>
-    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:url" content="https://quinhsieh.github.io/validation-form" />
+    <meta property="og:image:alt" content="Email verification form exercise" />
+    <meta property="og:image:type" content="image/png" />
     <script type="text/javascript" src="jquery.min.js"></script>
 
     <style>
-
         body {
 
             background-color: #F2F3F5;
@@ -30,7 +29,8 @@
 
             padding-top: 60px;
             width: 600px;
-            margin: auto; /* 居中 */
+            margin: auto;
+            /* 居中 */
             font-family: "Helvetica Neue", "Helvetica", "Arial";
         }
 
@@ -54,13 +54,13 @@
         label {
 
             width: 200px;
-            float:left;
+            float: left;
             font-size: 1.2em;
             padding-top: 10px;
         }
 
         #mail-gender {
- 
+
             width: 323px;
             height: 40px;
 
@@ -85,10 +85,8 @@
 
             color: red;
         }
+    </style>
 
-
-    </style> 
-    
 </head>
 
 <body>
@@ -98,19 +96,24 @@
         <form id="validationForm">
 
             <label for="email-name">Name</label>
-            <input id="email-name" class="input-style input-width" type="text" name="name" placeholder="Enter your name">
+            <input id="email-name" class="input-style input-width" type="text" name="name"
+                placeholder="Enter your name">
             <label for="email-address">E-mail</label>
-            <input id="email-address" class="input-style input-width" type="text" name="email" placeholder="Enter your email">
+            <input id="email-address" class="input-style input-width" type="text" name="email"
+                placeholder="Enter your email">
             <label for="mail-gender">Gender</label>
             <select name="gender" id="mail-gender" class="input-style">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
             <label for="pass1">Password</label>
-            <input id="pass1" class="input-style input-width" type="password" name="pass1" placeholder="Enter your password">
+            <input id="pass1" class="input-style input-width" type="password" name="pass1"
+                placeholder="Enter your password">
             <label for="pass2">Confirm Password</label>
-            <input id="pass2" class="input-style input-width" type="password" name="pass2" placeholder="Confirm your password">
-            <textarea name="message" id="mail-message" class="input-style" cols="80" rows="8" placeholder="Please describe your situation"></textarea>
+            <input id="pass2" class="input-style input-width" type="password" name="pass2"
+                placeholder="Confirm your password">
+            <textarea name="message" id="mail-message" class="input-style" cols="80" rows="8"
+                placeholder="Please describe your situation"></textarea>
 
             <button id="submitButton" class="input-style" type="submit" name="submit">Send E-mail</button>
         </form>
@@ -120,8 +123,7 @@
     </div>
 
     <script type="text/javascript">
-
-        $("#validationForm").submit(function(event) {
+        $("#validationForm").submit(function (event) {
 
             var errorMessage = "";
 
@@ -145,7 +147,7 @@
             if (name == "" || email == "" || pass1 == "" || pass2 == "" || message == "") {
 
                 errorMessage = "Please enter the complete message.";
-            
+
             } else if (!isValidEmailAddress(email)) {
 
                 errorMessage = "Please enter a valid email format.";
@@ -157,7 +159,7 @@
             }
 
             if (errorMessage == "") {
-                
+
                 $("#error").html("Message has been sent, thank you for your feedback!");
                 $("#error").css("color", "green");
 
@@ -167,13 +169,12 @@
                 $("#error").css("color", "red");
             }
 
-            
-        });
-        
 
+        });
     </script>
 
 </body>
 
 <div id="error"></div>
-</html
+
+</html>
